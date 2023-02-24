@@ -1,40 +1,47 @@
-const container = document.querySelector('.cont');
-const one = document.querySelector('.one');
-const two = document.querySelector('.two');
-const three = document.querySelector('.three');
-const upBtn = document.querySelector('.up');
-const downBtn = document.querySelector('.down');
+const btn = document.querySelector('.btn');
+const card = document.querySelector('.cardCont');
+const card2 = document.querySelector('.cardCont2');
 
-const car = document.querySelector('.car');
+//const hr = document.querySelectorAll('hr')
+const closebtn = document.querySelectorAll('.flex button');
+//console.log(closebtn)
+let boolean = true;
 
-const lifeElem = document.querySelector('.life');
-
-let life = 100;
-
-lifeElem.style.width = life + '%';
-
-upBtn.addEventListener('click', () => {
-  let die =  life - 20;
-  life = die;
-  console.log(life)
-  lifeElem.style.width = die + '%';
-  if (life <= 0) {
-    alert('You died')
-    location.reload();
-  }
+//let originalValue = 100;
+/*   hr.forEach((hr) => {
+  hr.style.width = originalValue + '%';
 })
 
-if(touching(car, one)){
-  console.log('Touching!');
+*/
+function call() {
+ // alert(`this ${btn} has been clicked`)
+ //card.style.right = '3%';
+ 
+ //let removeValue = originalValue - 20;
+
+//originalValue = removeValue;
+
+
+ /*setInterval(() => {
+   hr.forEach((hr) =>{
+     hr.style.width = removeValue + '%';
+   })
+ },1000);*/
+
+boolean ? card.style.right = '3%' : card2.style.right = '3%'
+
 }
 
-function touching(car, one) {
-  var carr = car.getBoundingClientRect();
-  var onee = one.getBoundingClientRect();
-  
-  if (carr.right == onee.left) {
-    return true;
-  }
-}
+//let elem = Array.from(closebtn);
+closebtn.forEach((x) => {
+  x.addEventListener( 'click', () => {
+    boolean ? card.style.right = '100%' :
+      card2.style.right = '100%';
+  })
+})
 
 
+/*function go() {
+  boolean ? card.style.right = '100%' :
+    card2.style.right = '100%';
+}*/
