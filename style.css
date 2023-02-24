@@ -1,0 +1,141 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.cont{
+  background:#333;
+  width:80%;
+  height:50vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.ground{
+  background: brown;
+  width:2000%;
+  padding:30px;
+  position:absolute;
+  bottom:0;
+  z-index: 200;
+}
+.controls{
+  padding:20px;
+}
+.up,
+.down{
+  padding:15px;
+  font-weight: 1000;
+  font-size: 20px;
+  border: 1px solid black;
+    background:transparent;
+  outline:none;
+}
+.up{
+  transition: .2s ease-in-out;
+  padding:15px 20px;
+}
+.up:hover{
+  background: yellow;
+}
+.down{
+  transition: .2s ease-in-out;
+  padding:15px 20px;
+}
+.down:hover{
+  background: darkred;
+}
+.car{
+  width:75px;
+  height:15px;
+  background: red;
+  position: absolute;
+  top:72%;
+  left:10%;
+  z-index: 30;
+  border-radius: 50%;
+}
+.car::before{
+  content: '';
+  width:150px;
+  height:25px;
+  background:green;
+  position: absolute;
+  left:-50%;
+  top:50%;
+}
+.obstacles{
+  position: absolute;
+  display: flex;
+  right:5%;
+  top:78%;
+}
+.one{
+  background: burlywood;
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  margin-left: 10px;
+  position: relative;
+  right:100%;
+  animation: move 2s infinite ease;
+  z-index: 50;
+}
+.two{
+  position: absolute;
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  right:200%;
+  background: blueviolet;
+  animation: movetwo 3s infinite ease;
+  z-index: 50;
+}
+.three{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  position: absolute;
+  right:150%;
+  background: seagreen;
+  animation: movethree 7s infinite ease;
+  z-index: 50;
+}
+@keyframes move{
+  0% {
+    right:-100%;
+  }
+  100%{
+    right:1000%;
+  }
+}
+@keyframes movetwo{
+  0%{
+    right:-200%;
+  }
+  100%{
+    right:1000%;
+  }
+}
+@keyframes movethree {
+  0%{
+    right:-300%;
+  }
+  100%{
+    right:1000%;
+  }
+}
+.life{
+  width:100%;
+  height:15px;
+  background: indianred
+}
+span{
+  padding:none;
+}
